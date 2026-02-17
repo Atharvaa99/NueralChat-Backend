@@ -31,7 +31,7 @@ A production-grade RESTful API backend for an AI-powered chat application. Users
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/neuralchat-backend.git
+   git clone https://github.com/Atharvaa99/NueralChat-Backend.git
    cd neuralchat-backend
    ```
 
@@ -297,7 +297,7 @@ All models are provided free via [Groq](https://groq.com) - no API costs!
    - `FRONTEND_URL`
 5. Deploy!
 
-**Live API:** `https://your-app.onrender.com`
+**Live API:** `https://nueralchat-backend.onrender.com/`
 
 ## 🔐 Environment Variables
 
