@@ -17,7 +17,7 @@ const promptSchema = mongoose.Schema({
     },
     model:{
         type: String,
-        enum: ['llama3','mixtral','gemma'],
+        enum: ['llama3', 'llama3fast', 'qwen'],
         required: true
     }
 })
