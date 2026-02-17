@@ -275,9 +275,9 @@ neuralchat-backend/
 
 | Model Key | Actual Model | Best For |
 |-----------|-------------|----------|
-| `llama3` | llama-3.3-70b-versatile | General purpose |
-| `mixtral` | mistral-saba-24b | Reasoning tasks |
-| `gemma` | gemma2-9b-it | Lightweight responses |
+| `llama3` | llama-3.3-70b-versatile | General purpose, best quality |
+| `llama3fast` | llama-3.1-8b-instant | Fast responses, high rate limits |
+| `qwen` | qwen/qwen-3-32b | Reasoning and complex tasks |
 
 All models are provided free via [Groq](https://groq.com) - no API costs!
 
