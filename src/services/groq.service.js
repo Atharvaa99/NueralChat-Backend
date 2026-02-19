@@ -6,8 +6,7 @@ const client = new Groq({
 
 const MODELS = {
     llama3: 'llama-3.3-70b-versatile',      
-    llama3fast: 'llama-3.1-8b-instant',      
-    llama3mid: 'llama-3.1-70b-versatile'      
+    llama3fast: 'llama-3.1-8b-instant'    
 }
 
 async function modelResponse(model,messages) {
