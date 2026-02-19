@@ -3,13 +3,6 @@ const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-const COOKIE_OPTIONS = {
-    httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-    maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
-};
-
 async function registerUser(req, res) {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -48,7 +41,10 @@ async function registerUser(req, res) {
                 { expiresIn: '7d' }
             );
 
-            res.cookie('token', token, COOKIE_OPTIONS);
+            res.status(201).json({
+                message: 'User Registered successfully',
+                token
+            })
 
         } catch (err) {
             console.log('Error creating token:', err);
@@ -56,10 +52,6 @@ async function registerUser(req, res) {
                 message: 'Failed to create Token'
             })
         }
-
-        res.status(201).json({
-            message: 'User Registered successfully'
-        })
     } catch (err) {
         console.log('Error in registration of user:', err);
         return res.status(503).json({
@@ -104,15 +96,14 @@ async function loginUser(req, res) {
         { expiresIn: '7d' }
     );
 
-    res.cookie('token', token, COOKIE_OPTIONS);
-
     res.status(200).json({
-        message: 'Logged In successfully'
+        message: 'Logged In successfully',
+        token
     });
 }
 
 async function logOutUser(req, res) {
-    res.clearCookie('token', COOKIE_OPTIONS);
+
     res.status(200).json({
         message: 'User Logged Out'
     })
